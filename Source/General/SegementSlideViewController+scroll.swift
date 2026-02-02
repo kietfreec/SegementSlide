@@ -72,14 +72,14 @@ extension SegementSlideViewController {
         switch innerBouncesType {
         case .parent:
             if !canChildViewScroll {
-                childScrollView.contentOffset.y = 0
+                childScrollView.forceFixedContentOffsetY = 0
             } else if childContentOffsetY <= 0 {
                 canChildViewScroll = false
                 canParentViewScroll = true
             }
         case .child:
             if !canChildViewScroll {
-                childScrollView.contentOffset.y = 0
+                childScrollView.forceFixedContentOffsetY = 0
             } else if childContentOffsetY <= 0 {
                 if parentContentOffsetY <= 0 {
                     canChildViewScroll = true
